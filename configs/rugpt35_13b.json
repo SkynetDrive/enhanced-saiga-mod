@@ -9,4 +9,14 @@
         "logging_steps": 5,
         "learning_rate": 0.0003,
         "num_train_epochs": 5,
-        "l
+        "lr_scheduler_type": "cosine",
+        "warmup_steps": 30,
+        "fp16": false,
+        "bf16": true,
+        "torch_compile": false,
+        "optim": "adamw_torch"
+    },
+    "lora": {
+        "r": 16,
+        "lora_alpha": 16,
+        "lo
