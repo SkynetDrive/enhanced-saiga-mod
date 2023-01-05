@@ -19,4 +19,13 @@
     "lora": {
         "r": 16,
         "lora_alpha": 16,
-        "lo
+        "lora_dropout": 0.05,
+        "bias": "none",
+        "target_modules": ["c_attn"],
+        "task_type": "CAUSAL_LM"
+    },
+    "load_in_8bit": true,
+    "only_target_loss": true,
+    "mode": "chat",
+    "templates_path": "internal_prompts/gigasaiga.json",
+    "model_na
