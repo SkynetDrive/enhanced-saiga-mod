@@ -11,4 +11,13 @@ from itertools import tee
 
 def revert_flattening(records):
     fixed_records = []
-    for key, va
+    for key, values in records.items():
+        if not fixed_records:
+            fixed_records = [{} for _ in range(len(values))]
+        for i, value in enumerate(values):
+            fixed_records[i][key] = value
+    return fixed_records
+
+
+def calc_max_length(records):
+    return max([su
