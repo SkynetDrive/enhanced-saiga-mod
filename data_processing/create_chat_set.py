@@ -20,4 +20,13 @@ def revert_flattening(records):
 
 
 def calc_max_length(records):
-    return max([su
+    return max([sum([len(m["content"]) for m in r["messages"]]) for r in records])
+
+
+def build_char_system_messages(char):
+    name = char["name"]
+    context = char["context"]
+    greeting = char["greeting"]
+    example_dialogue = char["example_dialogue"]
+
+    context = f"Т
