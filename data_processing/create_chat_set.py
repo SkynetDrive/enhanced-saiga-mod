@@ -29,4 +29,13 @@ def build_char_system_messages(char):
     greeting = char["greeting"]
     example_dialogue = char["example_dialogue"]
 
-    context = f"Т
+    context = f"Ты - {name}. {context}"
+    chat = []
+    if random.random() < 0.2:
+        context += f"\nПриветствие: {greeting}"
+        chat.append({
+            "role": "bot",
+            "content": greeting
+        })
+    if random.random() < 0.2:
+        print(example_di
