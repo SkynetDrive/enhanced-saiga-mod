@@ -38,4 +38,10 @@ def build_char_system_messages(char):
             "content": greeting
         })
     if random.random() < 0.2:
-        print(example_di
+        print(example_dialogue)
+        mapping = {
+            "user": "Пользователь",
+            "char": "Персонаж"
+        }
+        example_messages = [f'{mapping[m["role"]]}: {m["content"]}' for m in example_dialogue['chat']]
+        context += "\nПример диалога:\n" + "\n".join(example_mes
