@@ -44,4 +44,17 @@ def build_char_system_messages(char):
             "char": "Персонаж"
         }
         example_messages = [f'{mapping[m["role"]]}: {m["content"]}' for m in example_dialogue['chat']]
-        context += "\nПример диалога:\n" + "\n".join(example_mes
+        context += "\nПример диалога:\n" + "\n".join(example_messages)
+    chat.insert(0, {
+        "role": "system",
+        "content": context
+    })
+    return chat
+
+
+def re_tokenize(text):
+    return re.findall(r'[а-яё-]+|[a-z-]+|\d+|\S', text, re.I)
+
+
+def ngrams(sequence, n):
+  
