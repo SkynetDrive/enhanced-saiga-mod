@@ -57,4 +57,12 @@ def re_tokenize(text):
 
 
 def ngrams(sequence, n):
-  
+    iterables = tee(iter(sequence), n)
+    for i, sub_iterable in enumerate(iterables):
+        for _ in range(i):
+            next(sub_iterable, None)
+    return zip(*iterables)
+
+
+def calc_fingerprint(text, ngram_size: int = 1, num_perm: int = 128):
+    tok
