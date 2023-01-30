@@ -81,4 +81,13 @@ def calc_fingerprint(text, ngram_size: int = 1, num_perm: int = 128):
 
 
 def undup_alpaca(alpaca_records, num_perm: int = 32, threshold: float = 0.3, debug: bool = False):
-    for record in tqdm(alpaca_record
+    for record in tqdm(alpaca_records, desc="Fingerprinting"):
+        record["minhash"] = calc_fingerprint(record["messages"][0]["content"], num_perm=num_perm)
+
+    lsh = MinHashLSH(
+        threshold=threshold,
+        num_perm=num_perm
+    )
+
+    filtered_records = []
+    for idx, record in tqdm(enumer
