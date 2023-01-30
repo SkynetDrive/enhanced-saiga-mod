@@ -90,4 +90,9 @@ def undup_alpaca(alpaca_records, num_perm: int = 32, threshold: float = 0.3, deb
     )
 
     filtered_records = []
-    for idx, record in tqdm(enumer
+    for idx, record in tqdm(enumerate(alpaca_records), desc="Undup"):
+        minhash = LeanMinHash.deserialize(record["minhash"])
+        is_dup = False
+        for other_idx in lsh.query(minhash):
+            other_record = alpaca_records[other_idx]
+            other_minhash = LeanMinHash.deserial
