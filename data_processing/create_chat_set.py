@@ -107,4 +107,15 @@ def undup_alpaca(alpaca_records, num_perm: int = 32, threshold: float = 0.3, deb
             continue
         lsh.insert(idx, minhash)
         filtered_records.append(record)
-   
+    for record in filtered_records:
+        record.pop("minhash")
+    return filtered_records
+
+
+def main(train_path, val_path):
+    random.seed(42)
+
+    records = []
+
+    evol_records = []
+    for row in tqdm(load_dataset("IlyaGusev/ru_turbo_alpac
