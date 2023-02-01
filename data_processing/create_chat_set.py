@@ -118,4 +118,11 @@ def main(train_path, val_path):
     records = []
 
     evol_records = []
-    for row in tqdm(load_dataset("IlyaGusev/ru_turbo_alpac
+    for row in tqdm(load_dataset("IlyaGusev/ru_turbo_alpaca_evol_instruct", split="train")):
+        instruction = row["instruction"]
+        output = row["output"]
+        if has_bad_ss([{"content": output}]):
+            continue
+        evol_records.append({
+            "messages": [
+                {"role": "user", "content": instruction},
