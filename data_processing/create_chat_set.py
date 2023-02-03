@@ -131,4 +131,12 @@ def main(train_path, val_path):
             "source": "alpaca-evol-instruct"
         })
     print("Evol-instruct count:", len(evol_records))
-    print("Max evol-instruct length:", calc_max_length(evol_records
+    print("Max evol-instruct length:", calc_max_length(evol_records))
+
+    alpaca_records = []
+    for row in tqdm(load_dataset("IlyaGusev/ru_turbo_alpaca", split="train")):
+        message = row["instruction"]
+        if row["input"]:
+            message += "\nДано: " + row["input"]
+        output = row["alternative_output"]
+        i
