@@ -126,3 +126,9 @@ def main(train_path, val_path):
         evol_records.append({
             "messages": [
                 {"role": "user", "content": instruction},
+                {"role": "bot", "content": output}
+            ],
+            "source": "alpaca-evol-instruct"
+        })
+    print("Evol-instruct count:", len(evol_records))
+    print("Max evol-instruct length:", calc_max_length(evol_records
