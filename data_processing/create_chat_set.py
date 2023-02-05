@@ -139,4 +139,10 @@ def main(train_path, val_path):
         if row["input"]:
             message += "\nДано: " + row["input"]
         output = row["alternative_output"]
-        i
+        if has_bad_ss([{"content": output}]):
+            output = row["output"]
+            if has_bad_ss([{"content": output}]):
+                continue
+        alpaca_records.append({
+            "messages": [
+                {"role": "user", "content": me
