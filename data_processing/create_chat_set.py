@@ -145,4 +145,13 @@ def main(train_path, val_path):
                 continue
         alpaca_records.append({
             "messages": [
-                {"role": "user", "content": me
+                {"role": "user", "content": message},
+                {"role": "bot", "content": output}
+            ],
+            "source": "alpaca"
+        })
+    print("Alpaca count:", len(alpaca_records))
+    print("Max Alpaca length:", calc_max_length(alpaca_records))
+
+
+for row in load_dataset("d0r
