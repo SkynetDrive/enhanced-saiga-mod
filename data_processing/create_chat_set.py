@@ -154,4 +154,9 @@ def main(train_path, val_path):
     print("Max Alpaca length:", calc_max_length(alpaca_records))
 
 
-for row in load_dataset("d0r
+for row in load_dataset("d0rj/dolphin-ru", split="train"):
+    row = {key: value for key, value in row.items() if key in ("input", "output", "instruction")}
+    records.append(row)
+
+for row in load_dataset("d0rj/gsm8k-ru", split="train"):
+    row = {key: value for key, value i
