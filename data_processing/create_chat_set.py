@@ -159,4 +159,8 @@ for row in load_dataset("d0rj/dolphin-ru", split="train"):
     records.append(row)
 
 for row in load_dataset("d0rj/gsm8k-ru", split="train"):
-    row = {key: value for key, value i
+    row = {key: value for key, value in row.items() if key in ("input", "output", "instruction")}
+    records.append(row)
+
+for row in load_dataset("d0rj/alpaca-cleaned-ru", split="train"):
+    row = {key: value for key, value in row.items() if key in ("input", "output", "instruction"
