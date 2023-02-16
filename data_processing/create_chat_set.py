@@ -184,4 +184,8 @@ with open(train_path, "w") as w:
         w.write(json.dumps(record, ensure_ascii=False).strip() + "\n")
 with open(val_path, "w") as w:
     for record in val_records:
-        w.write(js
+        w.write(json.dumps(record, ensure_ascii=False).strip() + "\n")
+
+train_path = sys.argv[1]
+val_path = sys.argv[2]
+main(train_path, val_path)
