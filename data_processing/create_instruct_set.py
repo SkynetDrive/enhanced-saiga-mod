@@ -133,3 +133,24 @@ def main(train_path, val_path):
     records += ru_turbo_alpaca_evol_instruct_records
 
     print("All count:", len(records))
+    print("All max length:", calc_max_length(records), "\n")
+
+    updup_records = undup_alpaca(records)
+    print("Instruct after undup count:", len(updup_records), "\n")
+
+    random.shuffle(updup_records)
+    border = int(0.95 * len(updup_records))
+    train_records = updup_records[:border]
+    val_records = updup_records[border:]
+    with open(train_path, "w") as w:
+        for record in train_records:
+            w.write(json.dumps(record, ensure_ascii=False).strip() + "\n")
+    with open(val_path, "w") as w:
+        for record in val_records:
+            w.write(json.dumps(record, ensure_ascii=False).strip() + "\n")
+
+
+if __name__ == "__main__":
+    train_path = sys.argv[1]
+    val_path = sys.argv[2]
+    main(train_path, val_path)
