@@ -19,4 +19,12 @@ def re_tokenize(text):
     return re.findall(r'[а-яё-]+|[a-z-]+|\d+|\S', text, re.I)
 
 
-def ngrams
+def ngrams(sequence, n):
+    iterables = tee(iter(sequence), n)
+    for i, sub_iterable in enumerate(iterables):
+        for _ in range(i):
+            next(sub_iterable, None)
+    return zip(*iterables)
+
+
+def calc_fingerprint(text, ngram_size: int = 1, num_perm: 
