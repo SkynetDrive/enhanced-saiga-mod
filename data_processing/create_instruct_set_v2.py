@@ -27,4 +27,13 @@ def ngrams(sequence, n):
     return zip(*iterables)
 
 
-def calc_fingerprint(text, ngram_size: int = 1, num_perm: 
+def calc_fingerprint(text, ngram_size: int = 1, num_perm: int = 128):
+    tokens = re_tokenize(text)
+    if ngram_size > 1:
+        tokens = {" ".join(t) for t in ngrams(tokens, ngram_size)}
+    tokens = [token.encode('utf-8') for token in tokens]
+
+    minhash = MinHash(num_perm=num_perm)
+    minhash.update_batch(tokens)
+
+    lean_minhash = Le
