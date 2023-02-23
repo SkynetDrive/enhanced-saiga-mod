@@ -44,4 +44,10 @@ def calc_fingerprint(text, ngram_size: int = 1, num_perm: int = 128):
 
 
 def undup_alpaca(alpaca_records, num_perm: int = 32, threshold: float = 0.3, debug: bool = False):
-    with Parallel(n_jobs=os.
+    with Parallel(n_jobs=os.cpu_count()) as parallel:
+        fingerprints = parallel(
+            delayed(calc_fingerprint)(record["messages"][0]["content"], 1, num_perm)
+            for record in tqdm(alpaca_records, desc="Fingerprinting")
+        )
+
+    for idx, record in tqdm(enumerate(alpa
