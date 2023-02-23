@@ -36,4 +36,12 @@ def calc_fingerprint(text, ngram_size: int = 1, num_perm: int = 128):
     minhash = MinHash(num_perm=num_perm)
     minhash.update_batch(tokens)
 
-    lean_minhash = Le
+    lean_minhash = LeanMinHash(minhash)
+    buf = bytearray(lean_minhash.bytesize())
+    lean_minhash.serialize(buf)
+
+    return buf
+
+
+def undup_alpaca(alpaca_records, num_perm: int = 32, threshold: float = 0.3, debug: bool = False):
+    with Parallel(n_jobs=os.
