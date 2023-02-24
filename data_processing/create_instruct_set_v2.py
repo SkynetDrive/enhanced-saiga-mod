@@ -50,4 +50,14 @@ def undup_alpaca(alpaca_records, num_perm: int = 32, threshold: float = 0.3, deb
             for record in tqdm(alpaca_records, desc="Fingerprinting")
         )
 
-    for idx, record in tqdm(enumerate(alpa
+    for idx, record in tqdm(enumerate(alpaca_records)):
+        record["minhash"] = fingerprints[idx]
+
+    lsh = MinHashLSH(
+        threshold=threshold,
+        num_perm=num_perm
+    )
+
+    filtered_records = []
+    for idx, record in tqdm(enumerate(alpaca_records), desc="Undup"):
+        minhash = LeanMinHash.deserialize(
