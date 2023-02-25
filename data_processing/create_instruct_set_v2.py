@@ -66,4 +66,8 @@ def undup_alpaca(alpaca_records, num_perm: int = 32, threshold: float = 0.3, deb
             other_record = alpaca_records[other_idx]
             other_minhash = LeanMinHash.deserialize(other_record["minhash"])
             if minhash.jaccard(other_minhash) > threshold:
-    
+                if debug:
+                    print()
+                    print("=========================")
+                    print(record["messages"][0]["content"].replace("\n", " "))
+                    print(other_record["messages"][0]["co
