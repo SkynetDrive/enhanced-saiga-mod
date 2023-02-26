@@ -70,4 +70,11 @@ def undup_alpaca(alpaca_records, num_perm: int = 32, threshold: float = 0.3, deb
                     print()
                     print("=========================")
                     print(record["messages"][0]["content"].replace("\n", " "))
-                    print(other_record["messages"][0]["co
+                    print(other_record["messages"][0]["content"].replace("\n", " "))
+                is_dup = True
+                break
+        if is_dup:
+            continue
+        lsh.insert(idx, minhash)
+        filtered_records.append(record)
+    for record in filtered_records:
