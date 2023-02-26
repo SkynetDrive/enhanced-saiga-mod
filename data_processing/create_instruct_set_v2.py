@@ -78,3 +78,15 @@ def undup_alpaca(alpaca_records, num_perm: int = 32, threshold: float = 0.3, deb
         lsh.insert(idx, minhash)
         filtered_records.append(record)
     for record in filtered_records:
+        record.pop("minhash")
+    return filtered_records
+
+
+def main(train_path, val_path):
+    random.seed(42)
+
+    records = []
+
+    # collection = "dim/OpenOrca-ru-gpt4"
+    # openorca_ru_gpt4_records = []
+    # print(f"Loading {col
