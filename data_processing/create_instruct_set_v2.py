@@ -89,4 +89,9 @@ def main(train_path, val_path):
 
     # collection = "dim/OpenOrca-ru-gpt4"
     # openorca_ru_gpt4_records = []
-    # print(f"Loading {col
+    # print(f"Loading {collection}")
+    # for row in tqdm(load_dataset(collection, split="train")):  # 50k instructions
+    #     message = ''
+    #     if row["system_prompt"]:
+    #         message += row["system_prompt"]
+    #     if row["system_prompt"] and row["question"]:
