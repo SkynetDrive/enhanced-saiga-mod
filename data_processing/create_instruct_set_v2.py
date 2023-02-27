@@ -95,3 +95,11 @@ def main(train_path, val_path):
     #     if row["system_prompt"]:
     #         message += row["system_prompt"]
     #     if row["system_prompt"] and row["question"]:
+    #         message += "\n"
+    #     if row["question"]:
+    #         message += row["question"]
+    #     output = row["response"]
+    #     if has_bad_ss([{"content": output}]):
+    #         continue
+    #     messages = [
+    #         {"role": "user", "content": messag
