@@ -109,4 +109,11 @@ def main(train_path, val_path):
     #         "messages": messages,
     #         "source": collection
     #     })
-    # print(f"{collection} count:", len(openorca_ru_gpt4_reco
+    # print(f"{collection} count:", len(openorca_ru_gpt4_records))
+    # print(f"Max {collection} length:", calc_max_length(openorca_ru_gpt4_records), "\n")
+    # records += openorca_ru_gpt4_records
+
+    # collection = "d0rj/OpenOrca-ru"
+    # openorca_ru_records = []
+    # print(f"Loading {collection}")
+    # for r
