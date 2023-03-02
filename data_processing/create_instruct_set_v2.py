@@ -102,4 +102,11 @@ def main(train_path, val_path):
     #     if has_bad_ss([{"content": output}]):
     #         continue
     #     messages = [
-    #         {"role": "user", "content": messag
+    #         {"role": "user", "content": message},
+    #         {"role": "bot", "content": output}
+    #     ]
+    #     openorca_ru_gpt4_records.append({
+    #         "messages": messages,
+    #         "source": collection
+    #     })
+    # print(f"{collection} count:", len(openorca_ru_gpt4_reco
