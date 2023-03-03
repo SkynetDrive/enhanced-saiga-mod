@@ -116,4 +116,9 @@ def main(train_path, val_path):
     # collection = "d0rj/OpenOrca-ru"
     # openorca_ru_records = []
     # print(f"Loading {collection}")
-    # for r
+    # for row in tqdm(load_dataset(collection, split="train[50000:100000]")):  # 50k instructions
+    #     message = ''
+    #     if row["system_prompt"]:
+    #         message += row["system_prompt"]
+    #     if row["system_prompt"] and row["question"]:
+    #    
