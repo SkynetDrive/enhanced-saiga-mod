@@ -128,4 +128,11 @@ def main(train_path, val_path):
     #     if has_bad_ss([{"content": output}]):
     #         continue
     #     messages = [
-    #    
+    #         {"role": "user", "content": message},
+    #         {"role": "bot", "content": output}
+    #     ]
+    #     openorca_ru_records.append({
+    #         "messages": messages,
+    #         "source": collection
+    #     })
+    # print(f"{collection} count:", len(openorca
