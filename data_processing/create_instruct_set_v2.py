@@ -135,4 +135,10 @@ def main(train_path, val_path):
     #         "messages": messages,
     #         "source": collection
     #     })
-    # print(f"{collection} count:", len(openorca
+    # print(f"{collection} count:", len(openorca_ru_records))
+    # print(f"Max {collection} length:", calc_max_length(openorca_ru_records), "\n")
+    # records += openorca_ru_records
+
+    # collection = "d0rj/dolphin-ru"
+    # dolphin_ru_records = []
+    # print(f"Loadin
