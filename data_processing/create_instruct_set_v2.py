@@ -141,4 +141,11 @@ def main(train_path, val_path):
 
     # collection = "d0rj/dolphin-ru"
     # dolphin_ru_records = []
-    # print(f"Loadin
+    # print(f"Loading {collection}")
+    # for row in tqdm(load_dataset(collection, split="train")):  # 50k instructions
+    #     message = ''
+    #     if row["instruction"]:
+    #         message += row["instruction"]
+    #     if row["instruction"] and row["input"]:
+    #         message += "\n"
+    #    
