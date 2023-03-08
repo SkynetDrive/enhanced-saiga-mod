@@ -155,4 +155,11 @@ def main(train_path, val_path):
     #         continue
     #     messages = [
     #         {"role": "user", "content": message},
-  
+    #         {"role": "bot", "content": output}
+    #     ]
+    #     dolphin_ru_records.append({
+    #         "messages": messages,
+    #         "source": collection
+    #     })
+    # print(f"{collection} count:", len(dolphin_ru_records))
+    # print(f"Max {co
