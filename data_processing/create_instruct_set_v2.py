@@ -162,4 +162,10 @@ def main(train_path, val_path):
     #         "source": collection
     #     })
     # print(f"{collection} count:", len(dolphin_ru_records))
-    # print(f"Max {co
+    # print(f"Max {collection} length:", calc_max_length(dolphin_ru_records), "\n")
+    # records += dolphin_ru_records
+
+    collection = "d0rj/gsm8k-ru"
+    gsm8k_ru_records = []
+    print(f"Loading {collection}")
+    for row in tqdm(load_dataset(collection, split="train")
