@@ -176,4 +176,10 @@ def main(train_path, val_path):
         gsm8k_ru_records.append({
             "messages": [
                 {"role": "user", "content": message},
-    
+                {"role": "bot", "content": output}
+            ],
+            "source": collection
+        })
+    print(f"{collection} count:", len(gsm8k_ru_records))
+    print(f"Max {collection} length:", calc_max_length(gsm8k_ru_records), "\n")
+    records += gsm8k_ru_records
