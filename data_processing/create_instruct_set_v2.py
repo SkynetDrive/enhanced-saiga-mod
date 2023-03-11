@@ -168,4 +168,12 @@ def main(train_path, val_path):
     collection = "d0rj/gsm8k-ru"
     gsm8k_ru_records = []
     print(f"Loading {collection}")
-    for row in tqdm(load_dataset(collection, split="train")
+    for row in tqdm(load_dataset(collection, split="train")):
+        message = row["question"]
+        output = row["answer"]
+        if has_bad_ss([{"content": output}]):
+            continue
+        gsm8k_ru_records.append({
+            "messages": [
+                {"role": "user", "content": message},
+    
