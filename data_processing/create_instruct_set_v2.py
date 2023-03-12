@@ -183,3 +183,11 @@ def main(train_path, val_path):
     print(f"{collection} count:", len(gsm8k_ru_records))
     print(f"Max {collection} length:", calc_max_length(gsm8k_ru_records), "\n")
     records += gsm8k_ru_records
+
+    collection = "d0rj/alpaca-cleaned-ru"
+    alpaca_cleaned_ru_records = []
+    print(f"Loading {collection}")
+    for row in tqdm(load_dataset(collection, split="train")):
+        message = ''
+        if row["instruction"]:
+  
