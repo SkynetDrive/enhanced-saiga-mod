@@ -196,4 +196,12 @@ def main(train_path, val_path):
         if row["input"]:
             message += row["input"]
         output = row["output"]
-        if has_bad_ss([{"content"
+        if has_bad_ss([{"content": output}]):
+            continue
+        alpaca_cleaned_ru_records.append({
+            "messages": [
+                {"role": "user", "content": message},
+                {"role": "bot", "content": output}
+            ],
+            "source": collection
+    
