@@ -204,4 +204,10 @@ def main(train_path, val_path):
                 {"role": "bot", "content": output}
             ],
             "source": collection
-    
+        })
+    print(f"{collection} count:", len(alpaca_cleaned_ru_records))
+    print(f"Max {collection} length:", calc_max_length(alpaca_cleaned_ru_records), "\n")
+    records += alpaca_cleaned_ru_records
+
+    collection = "IlyaGusev/ru_turbo_alpaca"
+    ru_turbo_alpaca
