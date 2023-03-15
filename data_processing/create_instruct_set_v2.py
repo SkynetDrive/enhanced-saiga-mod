@@ -210,4 +210,11 @@ def main(train_path, val_path):
     records += alpaca_cleaned_ru_records
 
     collection = "IlyaGusev/ru_turbo_alpaca"
-    ru_turbo_alpaca
+    ru_turbo_alpaca_records = []
+    print(f"Loading {collection}")
+    for row in tqdm(load_dataset(collection, split="train")):
+        if row["label"] == "ok" or not row["label"]:
+            continue
+        message = ''
+        if row["instruction"]:
+       
