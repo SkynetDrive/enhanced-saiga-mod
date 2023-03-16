@@ -217,4 +217,11 @@ def main(train_path, val_path):
             continue
         message = ''
         if row["instruction"]:
-       
+            message += row["instruction"]
+        if row["instruction"] and row["input"]:
+            message += "\n"
+        if row["input"]:
+            message += row["input"]
+        output = row["output"]
+        if has_bad_ss([{"content": output}]):
+        
