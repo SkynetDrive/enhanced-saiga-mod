@@ -224,4 +224,11 @@ def main(train_path, val_path):
             message += row["input"]
         output = row["output"]
         if has_bad_ss([{"content": output}]):
-        
+            continue
+        ru_turbo_alpaca_records.append({
+            "messages": [
+                {"role": "user", "content": message},
+                {"role": "bot", "content": output}
+            ],
+            "source": collection
+       
