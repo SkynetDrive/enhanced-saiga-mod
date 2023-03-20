@@ -237,4 +237,10 @@ def main(train_path, val_path):
     records += ru_turbo_alpaca_records
 
     collection = "IlyaGusev/ru_turbo_alpaca_evol_instruct"
-    ru_tur
+    ru_turbo_alpaca_evol_instruct_records = []
+    print(f"Loading {collection}")
+    for row in tqdm(load_dataset(collection, split="train")):
+        message = row["instruction"]
+        output = row["output"]
+        if has_bad_ss([{"content": output}]):
+       
