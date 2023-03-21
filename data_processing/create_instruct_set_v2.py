@@ -251,4 +251,8 @@ def main(train_path, val_path):
             ],
             "source": collection
         })
-    print(f"{collectio
+    print(f"{collection} count:", len(ru_turbo_alpaca_evol_instruct_records))
+    print(f"Max {collection} length:", calc_max_length(ru_turbo_alpaca_evol_instruct_records), "\n")
+    records += ru_turbo_alpaca_evol_instruct_records
+
+    print("All count:", len(
