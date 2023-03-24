@@ -255,4 +255,12 @@ def main(train_path, val_path):
     print(f"Max {collection} length:", calc_max_length(ru_turbo_alpaca_evol_instruct_records), "\n")
     records += ru_turbo_alpaca_evol_instruct_records
 
-    print("All count:", len(
+    print("All count:", len(records))
+    print("All max length:", calc_max_length(records), "\n")
+
+    updup_records = undup_alpaca(records)
+    print("Instruct after undup count:", len(updup_records), "\n")
+
+    random.shuffle(updup_records)
+    border = int(0.95 * len(updup_records))
+  
