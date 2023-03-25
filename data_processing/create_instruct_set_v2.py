@@ -268,4 +268,12 @@ def main(train_path, val_path):
     with open(train_path, "w") as w:
         for record in train_records:
             w.write(json.dumps(record, ensure_ascii=False).strip() + "\n")
-    with open(val_path, "w") as
+    with open(val_path, "w") as w:
+        for record in val_records:
+            w.write(json.dumps(record, ensure_ascii=False).strip() + "\n")
+
+
+if __name__ == "__main__":
+    train_path = sys.argv[1]
+    val_path = sys.argv[2]
+    main(train_path, val_path)
