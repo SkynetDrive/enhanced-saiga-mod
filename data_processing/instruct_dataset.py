@@ -19,4 +19,11 @@ class InstructDataset(Dataset):
             templates_path: str,
             sample_rate: float = 1.0,
             only_target_loss: bool = True,
-            input_type: st
+            input_type: str = "causal",
+            target_field: str = "output",
+            source_field: str = "input",
+            use_padding: bool = False
+    ):
+        self.original_records = original_records
+        self.sample_rate = sample_rate
+        self.tokenizer = tok
