@@ -26,4 +26,9 @@ class InstructDataset(Dataset):
     ):
         self.original_records = original_records
         self.sample_rate = sample_rate
-        self.tokenizer = tok
+        self.tokenizer = tokenizer
+        self.max_source_tokens_count = max_source_tokens_count
+        self.max_target_tokens_count = max_target_tokens_count
+        self.only_target_loss = only_target_loss
+        self.input_type = input_type
+        self.
