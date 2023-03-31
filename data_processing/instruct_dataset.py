@@ -31,4 +31,12 @@ class InstructDataset(Dataset):
         self.max_target_tokens_count = max_target_tokens_count
         self.only_target_loss = only_target_loss
         self.input_type = input_type
+        self.target_field = target_field
+        self.source_field = source_field
+        self.use_padding = use_padding
+        self.is_printed = False
+
+        with open(templates_path) as r:
+            self.templates = json.load(r)
+
         self.
