@@ -39,4 +39,11 @@ class InstructDataset(Dataset):
         with open(templates_path) as r:
             self.templates = json.load(r)
 
-        self.
+        self.records = []
+        for record in tqdm(original_records):
+            if random.random() > self.sample_rate:
+                continue
+            tensors = self.convert_record(record)
+            if tensors is None:
+                continue
+            self.rec
