@@ -46,4 +46,15 @@ class InstructDataset(Dataset):
             tensors = self.convert_record(record)
             if tensors is None:
                 continue
-            self.rec
+            self.records.append(tensors)
+
+    def __len__(self):
+        return len(self.records)
+
+    def __getitem__(self, index):
+        return self.records[index]
+
+    def convert_record(self, record):
+        instruction = record["instruction"]
+        inp = record[self.source_field]
+   
