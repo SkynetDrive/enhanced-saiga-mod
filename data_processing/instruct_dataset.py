@@ -57,4 +57,9 @@ class InstructDataset(Dataset):
     def convert_record(self, record):
         instruction = record["instruction"]
         inp = record[self.source_field]
-   
+        out = record[self.target_field]
+        if inp.strip() != "":
+            templates = self.templates["prompts_input"]
+            prompt_template = random.choice(templates)
+            source = prompt_template.format(instruction=instruction.strip(), inp=inp.strip())
+       
