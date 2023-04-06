@@ -68,4 +68,11 @@ class InstructDataset(Dataset):
             source = prompt_template.format(instruction=instruction.strip())
         target = out.strip()
         if not self.is_printed:
-          
+            print("Source and target examples")
+            print(source)
+            print(target)
+            self.is_printed = True
+        if self.input_type == "causal":
+            return self.convert_causal(source, target)
+        elif self.input_type == "seq2seq":
+            return
