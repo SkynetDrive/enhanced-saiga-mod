@@ -62,4 +62,10 @@ class InstructDataset(Dataset):
             templates = self.templates["prompts_input"]
             prompt_template = random.choice(templates)
             source = prompt_template.format(instruction=instruction.strip(), inp=inp.strip())
-       
+        else:
+            templates = self.templates["prompts_no_input"]
+            prompt_template = random.choice(templates)
+            source = prompt_template.format(instruction=instruction.strip())
+        target = out.strip()
+        if not self.is_printed:
+          
