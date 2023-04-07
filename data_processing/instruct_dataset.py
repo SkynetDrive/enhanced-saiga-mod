@@ -75,4 +75,12 @@ class InstructDataset(Dataset):
         if self.input_type == "causal":
             return self.convert_causal(source, target)
         elif self.input_type == "seq2seq":
-            return
+            return self.convert_seq2seq(source, target)
+        else:
+            assert False
+
+    def convert_causal(self, source, target=None):
+        source_tokens = self.tokenizer(
+            source,
+            add_special_tokens=False,
+            max_length=self.max_sourc
