@@ -83,4 +83,11 @@ class InstructDataset(Dataset):
         source_tokens = self.tokenizer(
             source,
             add_special_tokens=False,
-            max_length=self.max_sourc
+            max_length=self.max_source_tokens_count,
+            padding=False,
+            truncation=True
+        )["input_ids"]
+        if self.tokenizer.bos_token_id:
+            source_tokens.insert(0, self.tokenizer.bos_token_id)
+        input_ids = source_tokens[:]
+        a
