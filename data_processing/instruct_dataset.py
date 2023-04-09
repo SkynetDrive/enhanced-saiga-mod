@@ -90,4 +90,9 @@ class InstructDataset(Dataset):
         if self.tokenizer.bos_token_id:
             source_tokens.insert(0, self.tokenizer.bos_token_id)
         input_ids = source_tokens[:]
-        a
+        actual_length = len(input_ids)
+        max_length = self.max_source_tokens_count + self.max_target_tokens_count + 2
+        if target is not None:
+            target_tokens = self.tokenizer(
+                target,
+                add_special_tokens=F
