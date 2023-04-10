@@ -95,4 +95,10 @@ class InstructDataset(Dataset):
         if target is not None:
             target_tokens = self.tokenizer(
                 target,
-                add_special_tokens=F
+                add_special_tokens=False,
+                max_length=self.max_target_tokens_count,
+                padding=False,
+                truncation=True
+            )["input_ids"]
+            input_ids += target_tokens + [self.tokenizer.eos_token_id]
+            actual_length = le
