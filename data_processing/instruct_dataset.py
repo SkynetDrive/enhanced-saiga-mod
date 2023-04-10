@@ -101,4 +101,10 @@ class InstructDataset(Dataset):
                 truncation=True
             )["input_ids"]
             input_ids += target_tokens + [self.tokenizer.eos_token_id]
-            actual_length = le
+            actual_length = len(input_ids)
+            if self.use_padding:
+                padding = [self.tokenizer.pad_token_id for i in range(len(input_ids), max_length)]
+                input_ids.extend(padding)
+
+        input_ids = torch.LongTensor(input_ids)
+        labels = input_ids.clone()
