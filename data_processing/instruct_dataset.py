@@ -108,3 +108,9 @@ class InstructDataset(Dataset):
 
         input_ids = torch.LongTensor(input_ids)
         labels = input_ids.clone()
+        attention_mask = input_ids.new_ones(input_ids.size())
+        if self.use_padding:
+            labels[actual_length:] = -100
+            attention_mask[actual_length:] = 0
+        if self.only_target_loss:
+            labels[:len(sour
