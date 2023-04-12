@@ -113,4 +113,11 @@ class InstructDataset(Dataset):
             labels[actual_length:] = -100
             attention_mask[actual_length:] = 0
         if self.only_target_loss:
-            labels[:len(sour
+            labels[:len(source_tokens)] = -100
+        assert input_ids.size(0) == labels.size(0) == attention_mask.size(0) <= max_length
+
+        return {
+            "input_ids": input_ids,
+            "labels": labels,
+            "attention_mask": attention_mask
+    
