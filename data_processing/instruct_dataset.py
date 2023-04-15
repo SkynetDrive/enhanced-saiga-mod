@@ -120,4 +120,13 @@ class InstructDataset(Dataset):
             "input_ids": input_ids,
             "labels": labels,
             "attention_mask": attention_mask
-    
+        }
+
+    def convert_seq2seq(self, source, target=None):
+        inputs = self.tokenizer(
+            source,
+            add_special_tokens=True,
+            max_length=self.max_source_tokens_count,
+            padding=False,
+            truncation=True,
+            r
