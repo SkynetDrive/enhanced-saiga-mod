@@ -129,4 +129,11 @@ class InstructDataset(Dataset):
             max_length=self.max_source_tokens_count,
             padding=False,
             truncation=True,
-            r
+            return_tensors="pt"
+        )
+        inputs = {k: v.squeeze(0) for k, v in inputs.items()}
+        if target is not None:
+            outputs = self.tokenizer(
+                target,
+                add_special_tokens=True,
+                max_length=self.max_t
