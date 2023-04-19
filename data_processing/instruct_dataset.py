@@ -143,4 +143,6 @@ class InstructDataset(Dataset):
             )
             labels = outputs["input_ids"].squeeze(0).tolist()
             if labels[-1] != self.tokenizer.eos_token_id:
-                labels.ap
+                labels.append(self.tokenizer.eos_token_id)
+            inputs["labels"] = torch.LongTensor(labels)
+        return inputs
