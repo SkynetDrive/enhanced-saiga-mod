@@ -136,4 +136,11 @@ class InstructDataset(Dataset):
             outputs = self.tokenizer(
                 target,
                 add_special_tokens=True,
-                max_length=self.max_t
+                max_length=self.max_target_tokens_count,
+                padding=False,
+                truncation=True,
+                return_tensors="pt"
+            )
+            labels = outputs["input_ids"].squeeze(0).tolist()
+            if labels[-1] != self.tokenizer.eos_token_id:
+                labels.ap
