@@ -1,0 +1,3 @@
+import logging
+
+DEFAULT_MESSAGE_TEMPLATE
