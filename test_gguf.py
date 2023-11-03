@@ -19,4 +19,13 @@ class Conversation:
         self.logger = logging.getLogger('Conversation')
         self.message_template = message_template
         self.start_token_id = start_token_id
-        self.bot_token_id = b
+        self.bot_token_id = bot_token_id
+        self.history_limit = history_limit
+        self.messages = [
+            {
+                "role": "system",
+                "content": system_prompt
+            },
+            {
+                "role": "bot",
+                "content": "Здравст
