@@ -28,4 +28,16 @@ class Conversation:
             },
             {
                 "role": "bot",
-                "content": "Здравст
+                "content": "Здравствуйте! Чем могу помочь?"
+            }
+        ]
+
+    def get_start_token_id(self):
+        return self.start_token_id
+
+    def get_bot_token_id(self):
+        return self.bot_token_id
+
+    def add_message(self, role, message):
+        self.messages.append({
+         
