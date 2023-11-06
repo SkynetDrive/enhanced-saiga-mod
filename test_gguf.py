@@ -40,4 +40,15 @@ class Conversation:
 
     def add_message(self, role, message):
         self.messages.append({
-         
+            "role": role,
+            "content": message
+        })
+        self.trim_history()
+
+    def add_user_message(self, message):
+        self.add_message("user", message)
+
+    def add_bot_message(self, message):
+        self.add_message("assistant", message)
+
+    de
