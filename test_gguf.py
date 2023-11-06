@@ -51,4 +51,7 @@ class Conversation:
     def add_bot_message(self, message):
         self.add_message("assistant", message)
 
-    de
+    def trim_history(self):
+        if self.history_limit is not None and len(self.messages) > self.history_limit + 2:
+            overflow = len(self.messages) - (self.history_limit + 2)
+            self.messages = [self.messages[0]] + self.messages[overflow + 2:]  # remove old m
