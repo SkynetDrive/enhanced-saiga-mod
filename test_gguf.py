@@ -54,4 +54,13 @@ class Conversation:
     def trim_history(self):
         if self.history_limit is not None and len(self.messages) > self.history_limit + 2:
             overflow = len(self.messages) - (self.history_limit + 2)
-            self.messages = [self.messages[0]] + self.messages[overflow + 2:]  # remove old m
+            self.messages = [self.messages[0]] + self.messages[overflow + 2:]  # remove old messages except system
+
+    def get_prompt(self, tokenizer):
+        final_text = ""
+        # print(self.messages)
+        for message in self.messages:
+            message_text = self.message_template.format(**message)
+            final_text += message_text
+
+        # Bot token
