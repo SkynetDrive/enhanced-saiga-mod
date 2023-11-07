@@ -63,4 +63,8 @@ class Conversation:
             message_text = self.message_template.format(**message)
             final_text += message_text
 
-        # Bot token
+        # Bot token id may be an array
+        if isinstance(self.bot_token_id, (list, tuple)):
+            final_text += tokenizer.decode([self.start_token_id] + self.bot_token_id)
+        else:
+            final_text += tokenizer.decode([self.start_token_id, self.bot_token_
