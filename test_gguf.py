@@ -67,4 +67,15 @@ class Conversation:
         if isinstance(self.bot_token_id, (list, tuple)):
             final_text += tokenizer.decode([self.start_token_id] + self.bot_token_id)
         else:
-            final_text += tokenizer.decode([self.start_token_id, self.bot_token_
+            final_text += tokenizer.decode([self.start_token_id, self.bot_token_id])
+
+        return final_text.strip()
+
+
+def generate(model, prompt, messages, generation_config):
+    output = model(
+        prompt,
+        top_k=generation_config.top_k,
+        top_p=generation_config.top_p,
+        temperature=generation_config.temperature,
+        repe
