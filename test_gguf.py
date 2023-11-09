@@ -78,4 +78,15 @@ def generate(model, prompt, messages, generation_config):
         top_k=generation_config.top_k,
         top_p=generation_config.top_p,
         temperature=generation_config.temperature,
-        repe
+        repeat_penalty=generation_config.repetition_penalty,
+    )['choices'][0]['text']
+    return output.strip()
+
+
+from llama_cpp import Llama
+import os
+from pathlib import Path
+from huggingface_hub.file_download import http_get
+from transformers import GenerationConfig
+
+director
