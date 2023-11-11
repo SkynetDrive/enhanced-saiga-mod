@@ -89,4 +89,10 @@ from pathlib import Path
 from huggingface_hub.file_download import http_get
 from transformers import GenerationConfig
 
-director
+directory = Path('.').resolve()
+model_name = "pavelgpt_7b_128k/ggml-model-Q2_K.gguf"
+generation_config = GenerationConfig.from_pretrained("pavelgpt_7b_128k")
+final_model_path = str(directory / model_name)
+
+# if not os.path.exists(final_model_path):
+#     with open(f
