@@ -95,4 +95,14 @@ generation_config = GenerationConfig.from_pretrained("pavelgpt_7b_128k")
 final_model_path = str(directory / model_name)
 
 # if not os.path.exists(final_model_path):
-#     with open(f
+#     with open(final_model_path, "wb") as f:
+#         http_get(model_url, f)
+# os.chmod(final_model_path, 0o777)
+# print(f"{final_model_path} files downloaded.")
+
+model = Llama(
+    model_path=final_model_path,
+    # verbose=True,
+    n_gpu_layers=5,
+    n_ctx=4096,
+  
