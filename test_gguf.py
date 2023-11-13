@@ -105,4 +105,15 @@ model = Llama(
     # verbose=True,
     n_gpu_layers=5,
     n_ctx=4096,
-  
+    max_length=200,
+    echo=True,
+)
+
+conversation = Conversation(bot_token_id=7451)
+while True:
+    user_message = input("User: ")
+
+    # Reset chat command
+    if user_message.strip() == "/reset":
+        conversation = Conversation(bot_token_id=7451)
+        print("History 
