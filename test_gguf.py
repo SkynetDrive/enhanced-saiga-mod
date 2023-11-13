@@ -116,4 +116,13 @@ while True:
     # Reset chat command
     if user_message.strip() == "/reset":
         conversation = Conversation(bot_token_id=7451)
-        print("History 
+        print("History reset completed!")
+        continue
+
+    # Skip empty messages from user
+    if user_message.strip() == "":
+        continue
+
+    conversation.add_user_message(user_message)
+    prompt = conversation.get_prompt(model.tokenizer())
+    output = genera
