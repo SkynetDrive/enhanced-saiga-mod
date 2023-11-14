@@ -125,4 +125,15 @@ while True:
 
     conversation.add_user_message(user_message)
     prompt = conversation.get_prompt(model.tokenizer())
-    output = genera
+    output = generate(
+        model=model,
+        prompt=prompt,
+        generation_config=generation_config,
+        messages=conversation.messages
+    )
+
+    conversation.add_bot_message(output)
+    print("Bot:", output)
+    print()
+    print("==============================")
+    print()
