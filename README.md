@@ -5,4 +5,12 @@ training large language models on datasets from the [Saiga (rulm)](https://githu
 repository is an essential resource for anyone looking to leverage the advanced capabilities of the Saiga datasets for
 language model training.
 
-Our notebooks are crafted to provide intuitiv
+Our notebooks are crafted to provide intuitive, step-by-step guidance for training state-of-the-art LoRA adapters for
+different language models, ensuring that even those new to the field can successfully navigate the complexities of
+language model training.
+
+## Repository Contents
+
+### Jupyter Notebooks
+
+* [yarn
