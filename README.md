@@ -13,4 +13,6 @@ language model training.
 
 ### Jupyter Notebooks
 
-* [yarn
+* [yarn_mistral_7b_128k.ipynb](./yarn_mistral_7b_128k.ipynb) - this notebook contains a script for training the
+  [NousResearch/Yarn-Mistral-7b-128k](https://huggingface.co/NousResearch/Yarn-Mistral-7b-128k) model. This model, an
+  advancement over the base [Mistral 7B
