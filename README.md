@@ -15,4 +15,6 @@ language model training.
 
 * [yarn_mistral_7b_128k.ipynb](./yarn_mistral_7b_128k.ipynb) - this notebook contains a script for training the
   [NousResearch/Yarn-Mistral-7b-128k](https://huggingface.co/NousResearch/Yarn-Mistral-7b-128k) model. This model, an
-  advancement over the base [Mistral 7B
+  advancement over the base [Mistral 7B v0.1](https://huggingface.co/mistralai/Mistral-7B-v0.1), incorporates
+  the [Flash Attention 2](https://github.com/Dao-AILab/flash-attention) algorithm, enabling it to handle a
+  context size of up to 128k tokens. The notebook provides a detailed and user-fr
