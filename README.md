@@ -19,4 +19,7 @@ language model training.
   the [Flash Attention 2](https://github.com/Dao-AILab/flash-attention) algorithm, enabling it to handle a
   context size of up to 128k tokens. The notebook provides a detailed and user-friendly guide for training the LoRA
   adapter specifically for the Yarn-Mistral-7b-128k model. It meticulously outlines the necessary steps and parameters
-  required to optimize performance and achieve the best possible results w
+  required to optimize performance and achieve the best possible results with this enhanced model.
+* [rugpt35_13b.ipynb](./rugpt35_13b.ipynb) - This notebook focuses on training
+  the [ruGPT-3.5-13B](https://huggingface.co/ai-forever/ruGPT-3.5-13B) model, a powerful
+  language model specifically tailored for u
