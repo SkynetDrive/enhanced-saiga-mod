@@ -17,4 +17,6 @@ language model training.
   [NousResearch/Yarn-Mistral-7b-128k](https://huggingface.co/NousResearch/Yarn-Mistral-7b-128k) model. This model, an
   advancement over the base [Mistral 7B v0.1](https://huggingface.co/mistralai/Mistral-7B-v0.1), incorporates
   the [Flash Attention 2](https://github.com/Dao-AILab/flash-attention) algorithm, enabling it to handle a
-  context size of up to 128k tokens. The notebook provides a detailed and user-fr
+  context size of up to 128k tokens. The notebook provides a detailed and user-friendly guide for training the LoRA
+  adapter specifically for the Yarn-Mistral-7b-128k model. It meticulously outlines the necessary steps and parameters
+  required to optimize performance and achieve the best possible results w
