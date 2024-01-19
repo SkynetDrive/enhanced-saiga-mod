@@ -22,4 +22,6 @@ language model training.
   required to optimize performance and achieve the best possible results with this enhanced model.
 * [rugpt35_13b.ipynb](./rugpt35_13b.ipynb) - This notebook focuses on training
   the [ruGPT-3.5-13B](https://huggingface.co/ai-forever/ruGPT-3.5-13B) model, a powerful
-  language model specifically tailored for u
+  language model specifically tailored for understanding and generating Russian text. It guides users through creating a
+  LoRA layer for model adaptation and subsequently performing a conversion to the GGML format for optimized deployment.
+* [llama2_7b_yakovlev.ipynb](./llama2_7b_yakovlev.ipynb) - This notebook p
