@@ -30,4 +30,6 @@ language model training.
   named [Ivan Yakovlevich Yakovlev](https://en.wikipedia.org/wiki/Ivan_Yakovlev).
 * [pavelgpt_7b_128k.ipynb](./pavelgpt_7b_128k.ipynb) - This notebook provides a detailed guide for training a Russian
   language model based on
-  the [NousResearch/Yarn-Mistral-7b-128k](https://huggingface.co/NousR
+  the [NousResearch/Yarn-Mistral-7b-128k](https://huggingface.co/NousResearch/Yarn-Mistral-7b-128k) model. It is able to
+  generate text in Russian, answer questions, solve simple logical puzzles and simple math calculations. It is optimized
+  for INSTRUCT mode and it works better if you give it system prompt and only one instruction (withou
