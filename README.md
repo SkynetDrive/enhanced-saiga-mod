@@ -27,4 +27,7 @@ language model training.
 * [llama2_7b_yakovlev.ipynb](./llama2_7b_yakovlev.ipynb) - This notebook provides a detailed guide for training a
   Russian language model based on the [meta-llama/Llama-2-7b-hf](https://huggingface.co/meta-llama/Llama-2-7b-hf)
   model. The model is trained to imitate a historical figure
-  named [Ivan Yakovlevich Yakovlev](https://
+  named [Ivan Yakovlevich Yakovlev](https://en.wikipedia.org/wiki/Ivan_Yakovlev).
+* [pavelgpt_7b_128k.ipynb](./pavelgpt_7b_128k.ipynb) - This notebook provides a detailed guide for training a Russian
+  language model based on
+  the [NousResearch/Yarn-Mistral-7b-128k](https://huggingface.co/NousR
