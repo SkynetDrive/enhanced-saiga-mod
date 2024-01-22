@@ -24,4 +24,7 @@ language model training.
   the [ruGPT-3.5-13B](https://huggingface.co/ai-forever/ruGPT-3.5-13B) model, a powerful
   language model specifically tailored for understanding and generating Russian text. It guides users through creating a
   LoRA layer for model adaptation and subsequently performing a conversion to the GGML format for optimized deployment.
-* [llama2_7b_yakovlev.ipynb](./llama2_7b_yakovlev.ipynb) - This notebook p
+* [llama2_7b_yakovlev.ipynb](./llama2_7b_yakovlev.ipynb) - This notebook provides a detailed guide for training a
+  Russian language model based on the [meta-llama/Llama-2-7b-hf](https://huggingface.co/meta-llama/Llama-2-7b-hf)
+  model. The model is trained to imitate a historical figure
+  named [Ivan Yakovlevich Yakovlev](https://
