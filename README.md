@@ -32,4 +32,9 @@ language model training.
   language model based on
   the [NousResearch/Yarn-Mistral-7b-128k](https://huggingface.co/NousResearch/Yarn-Mistral-7b-128k) model. It is able to
   generate text in Russian, answer questions, solve simple logical puzzles and simple math calculations. It is optimized
-  for INSTRUCT mode and it works better if you give it system prompt and only one instruction (withou
+  for INSTRUCT mode and it works better if you give it system prompt and only one instruction (without history at all).
+
+### Scripts
+
+* [test_lora.py](./test_lora.py) - this script features a console-based chat interface and a Conversation class that
+  maintains a message history. It is specifically adapted to function seamlessly with the Mistral m
