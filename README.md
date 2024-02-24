@@ -37,4 +37,7 @@ language model training.
 ### Scripts
 
 * [test_lora.py](./test_lora.py) - this script features a console-based chat interface and a Conversation class that
-  maintains a message history. It is specifically adapted to function seamlessly with the Mistral m
+  maintains a message history. It is specifically adapted to function seamlessly with the Mistral model. The script
+  demonstrates a practical application of the model, showcasing its conversational abilities and providing a template
+  for further custom implementations.
+* [test_gguf.py](./test_gguf.py) - this script features a console-based chat interface 
