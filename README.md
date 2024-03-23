@@ -46,4 +46,7 @@ language model training.
 ## Pretrained models
 
 * [skynetdrive/saiga_mistral_7b_128k_lora](https://huggingface.co/skynetdrive/saiga_mistral_7b_128k_lora)
-* [skynetdrive/ruGPT-3.5-13B
+* [skynetdrive/ruGPT-3.5-13B-lora](https://huggingface.co/skynetdrive/ruGPT-3.5-13B-lora)
+* [skynetdrive/ruGPT-3.5-13B-ggml](https://huggingface.co/skynetdrive/ruGPT-3.5-13B-ggml)
+* [skynetdrive/llama2_7b_gguf_yakovlev](https://huggingface.co/skynetdrive/llama2_7b_gguf_yakovlev)
+* [skynetdrive/PavelGPT-7B-1
