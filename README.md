@@ -49,4 +49,9 @@ language model training.
 * [skynetdrive/ruGPT-3.5-13B-lora](https://huggingface.co/skynetdrive/ruGPT-3.5-13B-lora)
 * [skynetdrive/ruGPT-3.5-13B-ggml](https://huggingface.co/skynetdrive/ruGPT-3.5-13B-ggml)
 * [skynetdrive/llama2_7b_gguf_yakovlev](https://huggingface.co/skynetdrive/llama2_7b_gguf_yakovlev)
-* [skynetdrive/PavelGPT-7B-1
+* [skynetdrive/PavelGPT-7B-128K-v0.1-LoRA](https://huggingface.co/skynetdrive/PavelGPT-7B-128K-v0.1-LoRA)
+
+## Dependencies
+
+The notebooks and scripts in this repository depend on specific libraries and frameworks. Ensure you have the latest
+versions of these dependencies installe
