@@ -54,4 +54,21 @@ language model training.
 ## Dependencies
 
 The notebooks and scripts in this repository depend on specific libraries and frameworks. Ensure you have the latest
-versions of these dependencies installe
+versions of these dependencies installed:
+
+* Python 3.11
+* Jupyter Lab
+* PyTorch >= 2.1
+* transformers >= 4.30
+* flash-attn >= 2.3
+* joblib >= 1.1
+
+To install all dependencies just execute following command:
+
+```shell
+pip install -r requirements.txt
+```
+
+## Contribution
+
+Contributions t
