@@ -71,4 +71,9 @@ pip install -r requirements.txt
 
 ## Contribution
 
-Contributions t
+Contributions to the enhanced-saiga-mod project are welcome. If you have suggestions for improvement or have developed
+additional tools or scripts that could benefit the community, please feel free to submit a pull request.
+
+## License
+
+This project is licensed under the MIT
